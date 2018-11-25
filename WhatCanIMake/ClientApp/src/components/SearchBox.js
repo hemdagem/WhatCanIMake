@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Ingredient } from './Ingredient';
+import { AddIngredient } from './AddIngredient';
 
 
 export class SeachBox extends Component {
@@ -9,6 +9,7 @@ export class SeachBox extends Component {
         super(props);
         this.state = { forecasts: ["No Ingredients selected"] };
         this.findIngredients = this.findIngredients.bind(this);
+        this.findRecipes = this.findRecipes.bind(this);
     }
 
 
@@ -21,12 +22,16 @@ export class SeachBox extends Component {
             });
     }
 
+    findRecipes(event) {
+        console.log(event);
+    }
+
     static renderForecastsTable(forecasts) {
         return (
             <ul>
                 {forecasts.map(forecast =>
                     <li key={forecast}>
-                        {forecast}
+                        <AddIngredient ingredient={forecast} />
                     </li>
                 )}
             </ul>
@@ -44,10 +49,7 @@ export class SeachBox extends Component {
             <div>
                 <h1>Counter</h1>
 
-                <p>This is a simple example of a React component.</p>
-
                 {contents}
-                <Ingredient ingredient={this.state.forecasts} />
                 <input type="text" name="ingredientFinder" id="ingredientFinder" onKeyUp={this.findIngredients} />
             </div>
         );
