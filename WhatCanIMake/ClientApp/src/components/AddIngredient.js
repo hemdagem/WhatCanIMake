@@ -10,7 +10,6 @@ export class AddIngredient extends Component {
 
     findRecipes(event) {
         console.log(event.target);
-        
     }
 
     render() {

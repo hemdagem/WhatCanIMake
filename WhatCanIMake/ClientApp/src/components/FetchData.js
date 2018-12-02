@@ -10,10 +10,6 @@ export class FetchData extends Component {
     }
 
     render() {
-        return (
-            <div>
-                <SeachBox />
-            </div>
-        );
+        return <SeachBox />;
     }
 }
