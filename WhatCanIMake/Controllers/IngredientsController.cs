@@ -9,7 +9,7 @@ namespace WhatCanIMake.Controllers
 	{
 		private static string[] Summaries = new[]
 		{
-			"Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
+			"Tomato", "Onion", "Cheddar", "Rice", "Lemon", "Flour", "Chocolate", "Milk", "Pepper", "Lettuce", "Salt", "Ghee", "Split Green Lentils"
 		};
 
 		[HttpGet("[action]")]
