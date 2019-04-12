@@ -6,15 +6,17 @@ export default function Recipe(props) {
         <div>
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">{props.recipe.name}</h5>
+                    <h3 class="card-title">{props.recipe.name}</h3>
+                    <h4>Ingredients</h4>
                     <ul>
                         {props.recipe.ingredients.map(ingredient =>
-                            <li key={ingredient.name}>
-                                <Ingredient name={ingredient.name} />
+                            <li key={ingredient}>
+                                <Ingredient name={ingredient} />
                             </li>
                         )}
                     </ul>
-                    <p class="card-text">{props.recipe.recipe}</p>
+                    <h4>Recipe</h4>
+                    <p class="card-text" dangerouslySetInnerHTML={{__html: props.recipe.recipe}}></p>
                 </div>
             </div>
         </div>

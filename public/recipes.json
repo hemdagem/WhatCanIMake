@@ -2,11 +2,13 @@
 		{
             "id": 1,
             "name": "Tomato sandwich",
-            "ingredients" : ["Tomato"]
+            "ingredients" : ["Tomato"],
+            "recipe" : ""
         },
         {
             "id": 2,
-            "name": "Tomato sandwich",
-            "ingredients" : ["Tomato"]
+            "name": "Steamed Apple",
+            "ingredients" : ["Apple"],
+            "recipe" : "Wash the apples and cut them into slices, removing the stem and seeds.<br>Place apple slices into the instant pot bassinet.<br> Add a few glasses of water to instant pot.<br>Place the bassinet into instant pot<br>Set instant pot to sealing and steamed for 5 mins."
         }
 ]

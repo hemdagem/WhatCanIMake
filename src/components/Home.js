@@ -61,8 +61,7 @@ export default function Home() {
     return (
         <div>
             <div className="form-group">
-                <label htmlFor="ingredientFinder">Type Ingredients:</label>
-                <input type="text" className="form-control" placeholder="Enter Ingredients" name="ingredientFinder" id="ingredientFinder" onKeyUp={findIngredients} />
+                <input type="text" className="form-control" placeholder="Type Ingredients" name="ingredientFinder" id="ingredientFinder" onKeyUp={findIngredients} />
                 <ul className="list-group">
                     {ingredients.map(ingredient =>
                         <li className="list-group-item" key={ingredient}>
@@ -72,7 +71,7 @@ export default function Home() {
                 </ul>
             </div>
 
-            <h2>Recipes</h2>
+            <h3>Recipes</h3>
             <ul className="list-group">
                 {recipes.map(recipe =>
                     <li className="list-group-item" key={recipe.name}>
@@ -81,7 +80,7 @@ export default function Home() {
 
                 )}
             </ul>
-            <h2>Selected Ingredients</h2>
+            <h3>Selected Ingredients</h3>
             <ul className="list-group">
                 {selectedIngredients.map(ingredient =>
                     <li class="list-group-item" key={ingredient}>
