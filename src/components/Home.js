@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Recipe from './Recipe'
 
 export default function Home() {
@@ -13,13 +13,9 @@ export default function Home() {
         if (index > -1) {
             ingredients.splice(index, 1);
             setSelectedIngredients(ingredients);
-            
+            findRecipes();
         }
     }
-
-    useEffect(() => {   
-        findRecipes();
-    })
 
     function addIngredient(event) {
         if (selectedIngredients.includes(event._targetInst.key)) {
@@ -29,21 +25,36 @@ export default function Home() {
         ingredients.push(event._targetInst.key);
 
         setSelectedIngredients(ingredients);
+        findRecipes();
     }
 
     function findRecipes() {
+
+        function containsIngredient(element, index, array) {
+            return selectedIngredients.indexOf(element) !== -1;
+        }
+
         fetch('/recipes.json')
             .then(response => response.json())
             .then(data => {
-                setRecipes(data);
+                var recipes = data.filter(recipe => recipe.ingredients.some(containsIngredient) === true);
+                setRecipes(recipes);
             });
     }
 
-    function findIngredients() {
+    function findIngredients(event) {
+
+        const eventKey = event.key;
+
+        function containsIngredient(element, key) {
+            return selectedIngredients.indexOf(element) === -1 && element.toLowerCase().indexOf(key.toLowerCase()) > -1;
+        }
+
         fetch('/ingredients.json')
             .then(response => response.json())
             .then(data => {
-                setIngredients(data);
+                var availableIngredients = data.filter(ingredient => containsIngredient(ingredient, eventKey) === true);
+                setIngredients(availableIngredients);
             });
     }
 

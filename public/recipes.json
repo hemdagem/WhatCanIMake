@@ -3,5 +3,10 @@
             "id": 1,
             "name": "Tomato sandwich",
             "ingredients" : ["Tomato"]
+        },
+        {
+            "id": 2,
+            "name": "Tomato sandwich",
+            "ingredients" : ["Tomato"]
         }
 ]
