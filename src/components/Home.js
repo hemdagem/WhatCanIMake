@@ -44,7 +44,7 @@ export default function Home() {
 
     function findIngredients(event) {
 
-        const eventKey = event.key;
+        const eventKey = event.currentTarget.value;
 
         function containsIngredient(element, key) {
             return selectedIngredients.indexOf(element) === -1 && element.toLowerCase().indexOf(key.toLowerCase()) > -1;
@@ -54,7 +54,7 @@ export default function Home() {
             .then(response => response.json())
             .then(data => {
                 var availableIngredients = data.filter(ingredient => containsIngredient(ingredient, eventKey) === true);
-                setIngredients(availableIngredients);
+                setIngredients(availableIngredients.slice(0,9));
             });
     }
 
@@ -74,7 +74,7 @@ export default function Home() {
             <h3>Recipes</h3>
             <ul className="list-group">
                 {recipes.map(recipe =>
-                    <li className="list-group-item" key={recipe.name}>
+                    <li className="list-group-item" key={recipe.id}>
                         <Recipe recipe={recipe} />
                     </li>
 
@@ -83,7 +83,7 @@ export default function Home() {
             <h3>Selected Ingredients</h3>
             <ul className="list-group">
                 {selectedIngredients.map(ingredient =>
-                    <li class="list-group-item" key={ingredient}>
+                    <li className="list-group-item" key={ingredient}>
                         <button key={ingredient} onClick={removeIngredient}>Remove {ingredient}</button>
                     </li>
                 )}

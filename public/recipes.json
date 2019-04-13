@@ -7,8 +7,14 @@
         },
         {
             "id": 2,
-            "name": "Steamed Apple",
+            "name": "Steamed Apple - Instant Pot",
             "ingredients" : ["Apple"],
             "recipe" : "Wash the apples and cut them into slices, removing the stem and seeds.<br>Place apple slices into the instant pot bassinet.<br> Add a few glasses of water to instant pot.<br>Place the bassinet into instant pot<br>Set instant pot to sealing and steamed for 5 mins."
+        },
+        {
+            "id": 3,
+            "name": "Jacket Potato - Instant Pot",
+            "ingredients" : ["Jacket Potato"],
+            "recipe" : "Wash and poke a few potatoes and add to instant pot<br>Add water to instant pot<br>Set to steam for 22 minutes<br>Set instant pot to sealing"
         }
 ]
